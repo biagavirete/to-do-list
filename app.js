@@ -1,19 +1,66 @@
-const bancoLocal = new BancoLocal()
-const lista = new Lista()
+const form = document.querySelector('#form-list')
+const list = document.querySelector('#items-list')
+const clearButton = document.querySelector('.clear-list')
+const itemList = document.querySelector('#item')
 
+loadEventListeners()
 
-lista.botaoAdicionar.addEventListener("click", () => {
-  bancoLocal.gravar(lista.inputItem.value)
-  bancoLocal.ler()
-  lista.adicionarNaLista(bancoLocal.minhaLista)
-})
+function loadEventListeners() {
+  document.addEventListener('DOMContentLoaded', getList)    
+  form.addEventListener('submit', addItemToList) 
+  clearButton.addEventListener('click', clearList) 
+}
 
-lista.botaoApagar.addEventListener("click", () => {
-  bancoLocal.apagar()
-  lista.apagarLista()
-})
+function getList() {
+  let items
+  if(localStorage.getItem('items') === null) {
+    items = []
+  } else {
+    items = JSON.parse(localStorage.getItem('items'))
+  } 
 
-window.addEventListener("DOMContentLoaded", () => {
-  bancoLocal.ler()
-  lista.adicionarNaLista(bancoLocal.minhaLista)
-})
+  items.map(function(item) {  
+    createList(item)
+  })
+
+}
+
+function addItemToList(e) {
+    e.preventDefault()
+
+    createList(itemList.value)
+    itemToLocalStorage(itemList.value)
+    itemList.value = ''
+}
+
+function createList(itemValue) {
+  const item = document.createElement('label')
+  const checkbox = document.createElement('input')
+  checkbox.type = 'checkbox'
+
+  item.appendChild(checkbox)
+
+  const span = document.createElement('span')
+  span.textContent = itemValue
+
+  item.appendChild(span)
+  list.appendChild(item)
+}
+
+function clearList() {
+  list.textContent = ''
+  localStorage.clear()
+}
+
+function itemToLocalStorage(item) {
+  let items
+  if(localStorage.getItem('items') === null) {
+    items = []
+  } else {
+    items = JSON.parse(localStorage.getItem('items'))
+  }
+
+  items.push(item)
+
+  localStorage.setItem('items', JSON.stringify(items))
+} 

@@ -12,30 +12,27 @@
 <body>
   <main class="container">
     <h2>To-do list</h2>
-    <form action="">
+    <form id="form-list">
       <div class="input-field">
-        <input type="text" id="item" placeholder="Enter your to-do">
+        <input type="text" id="item" name="item" placeholder="Enter your to-do">
         <div class="underline"></div>
       </div>
-      <button id="adicionar" class="adicionar"><i class="fas fa-plus-circle"></i>Add new</button>
+      <button type="submit"><i class="fas fa-plus-circle"></i>Add new</button>
     </form>
 
-    <div class="list">
-      <label class="b-contain">
-        <span>Buy hand sanitizer</span>
-        <input type="checkbox">
-        <div class="b-input"></div>
+    <div id="items-list">
+      <label>
+          <input type="checkbox" />
+          <span>Walk the dogs</span>
       </label>
-    </div>
+  </div>
 
-    <div class="clear-lista-container">
-      <button id="adicionar" class="apagar"><i class="fas fa-trash-alt"></i>Clear list</button>
+    <div class="clear-list-container">
+      <button id="clearButton" class="clear-list"><i class="fas fa-trash-alt"></i>Clear list</button>
     </div>
 
     </div>
   </main>
-  <script src="bancoLocal.js"></script>
-  <script src="lista.js"></script>
   <script src="app.js"></script>
 </body>
 
