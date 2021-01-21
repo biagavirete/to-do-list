@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do list</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main class="container">
+    <h2>To-do list</h2>
+    <form action="">
+      <div class="input-field">
+        <input type="text" id="item" placeholder="Enter your to-do">
+        <div class="underline"></div>
+      </div>
+      <button id="adicionar" class="adicionar"><i class="fas fa-plus-circle"></i>Add new</button>
+    </form>
+
+    <div class="list">
+      <label class="b-contain">
+        <span>Buy hand sanitizer</span>
+        <input type="checkbox">
+        <div class="b-input"></div>
+      </label>
+    </div>
+
+    <div class="clear-lista-container">
+      <button id="adicionar" class="apagar"><i class="fas fa-trash-alt"></i>Clear list</button>
+    </div>
+
+    </div>
+  </main>
+  <script src="bancoLocal.js"></script>
+  <script src="lista.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

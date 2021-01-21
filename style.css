@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main.container {
+    background: #fff;
+    max-width: 350px;
+    min-height: 50vh;
+    padding: 2rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+main h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+main h2::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 75px;
+    bottom: 3px;
+    left: 0;
+    border-radius: 8x;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-field .underline::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  transform: scaleX(0);
+  transition: all .3s ease-in-out;
+  transform-origin: left;
+}
+
+.input-field input:focus ~ .underline::after {
+  transform: scaleX(1);
+}
+
+.input-field input {
+  outline: none;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.input-field input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+form button {
+  margin-top: 0.2rem;
+  padding: 0.4rem;
+  background: linear-gradient(to left, #4776e6, #8e54e9);
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+}
+
+form button i {
+  margin-right: 5px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.b-contain *, .b-contain *::before, .b-contain *::after {
+	box-sizing: content-box !important;
+}
+
+.b-contain input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.b-contain span {
+	line-height: 1.54;
+	font-size: 1rem;
+	font-family: inherit;
+}
+
+.b-contain {
+	display: table;
+	position: relative;
+	padding-left: 1.8rem;
+	cursor: pointer;
+	margin-bottom: .5rem;
+}
+
+.b-contain input[type="checkbox"] ~ .b-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.25rem;
+	width: 1.25rem;
+	background: rgba(241, 245, 248, 1);
+	transition: background 250ms;
+	border: 1px solid rgba(184, 194, 204, 1);
+	border-radius: 0.125rem;
+}
+
+.b-contain input[type="radio"] ~ .b-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.25rem;
+	width: 1.25rem;
+	background: rgba(241, 245, 248, 1);
+	transition: background 250ms;
+	border: 1px solid rgba(184, 194, 204, 1);
+	border-radius: 2.0rem;
+}
+
+.b-contain input[type="checkbox"] ~ .b-input::after {
+	content: '';
+	position: absolute;
+	display: none;
+	left: .45rem;
+	top: .18rem;
+	width: .25rem;
+	height: .6rem;
+	border: solid rgba(255, 255, 255, 1);
+	border-width: 0 2px 2px 0;
+	transition: background 250ms;
+	transform: rotate(45deg);
+}
+
+.b-contain input[type="radio"] ~ .b-input::after {
+	content: '';
+	position: absolute;
+	display: none;
+	left: .25rem;
+	top: .25rem;
+	width: .75rem;
+	height: .75rem;
+	border-radius: 2.0rem;
+	background: rgba(255, 255, 255, 1);
+	transition: background 250ms;
+}
+
+.b-contain input:disabled ~ .b-input::after {
+	border-color: rgba(135, 149, 161, 1);
+}
+
+.b-contain input:checked ~ .b-input::after {
+	display: block;
+}
+
+.b-contain:hover input ~ .b-input,
+.b-contain input:focus ~ .b-input {
+	background: rgb(231, 238, 243);
+}
+
+.b-contain input:focus ~ .b-input {
+	box-shadow: 0 0 0 2px #9a6ae7;
+}
+
+.b-contain input:checked ~ .b-input {
+	background: #8e54e9;
+	border-color: #8e54e9;
+}
+
+.b-contain input[type="checkbox"]:disabled ~ .b-input {
+	background: rgba(241, 245, 248, 1);
+	border-color: rgba(184, 194, 204, 1);
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.b-contain input[type="radio"]:disabled ~ .b-input {
+	background: rgba(241, 245, 248, 1);
+	border-color: rgba(184, 194, 204, 1);
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.b-contain input[type="radio"]:disabled ~ .b-input::after {
+	background: rgba(135, 149, 161, 1);
+}
+
+.b-contain input:checked:focus ~ .b-input, .b-contain:hover input:not([disabled]):checked ~ .b-input {
+	background: #8e54e9;
+	border-color: #8e54e9;
+}
+
+.b-contain .b-input::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 3rem;
+	height: 3rem;
+	margin-left: -0.85rem;
+	margin-top: -0.85rem;
+	background: #8e54e9;
+	border-radius: 2rem;
+	opacity: .6;
+	z-index: 99999;
+	transform: scale(0);
+}
+
+@keyframes b-ripple {
+	0% {
+		transform: scale(0);
+	}
+
+	20% {
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1);
+  	}
+}
+
+@keyframes b-ripple-duplicate {
+	0% {
+		transform: scale(0);
+	}
+
+	30% {
+		transform: scale(1);
+	}
+
+	60% {
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(1);
+  	}
+}
+
+.b-contain input + .b-input::before {
+	animation: b-ripple 250ms ease-out;
+}
+
+.b-contain input:checked + .b-input::before {
+	animation-name: b-ripple-duplicate;
+}
+
+.b-contain .b-input::before {
+	visibility: hidden;
+}
+
+.b-contain input:focus + .b-input::before {
+	visibility: visible;
+}
+
+.b-contain:first-child .b-input::before {
+	visibility: hidden;
+}
+
+.clear-lista-container {
+  margin-top: 1rem;
+}
+
+.clear-lista-container button {
+  width: 100%;
+  margin-top: 0.2rem;
+  padding: 0.4rem;
+  border: 3px linear-gradient(to left, #4776e6, #8e54e9);
+  cursor: pointer;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.clear-lista-container button:hover {
+  letter-spacing: 0.5px;
+}
+
+.clear-lista-container button i {
+  margin-right: 5px;
+}
